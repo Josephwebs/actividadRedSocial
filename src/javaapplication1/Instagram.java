@@ -55,8 +55,8 @@ public class Instagram extends RedSocial {
     public void mostrar() {
         super.mostrar();
         for (String string : this.historia) {
-            System.out.println("A continucion veras todas las noticias que has creado...");
-            System.out.println("---------------------------------");
+            System.out.println("A continucion veras todas las historias que has creado...");
+            System.out.println("--------------------------------------------------------");
             System.out.println(string);
         }
         //To change body of generated methods, choose Tools | Templates.

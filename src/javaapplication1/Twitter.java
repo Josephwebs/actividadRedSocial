@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package javaapplication1;
-
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -58,7 +56,7 @@ public class Twitter extends RedSocial {
         super.mostrar();
         System.out.println("A continucion veras todas las noticias que has creado...");
         for (String noticia : this.noticia) {
-            System.out.println("---------------------------------");
+            System.out.println("----------------------------------------------------");
             System.out.println(noticia);
         }
 //To change body of generated methods, choose Tools | Templates.

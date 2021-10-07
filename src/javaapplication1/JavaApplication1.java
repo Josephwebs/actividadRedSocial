@@ -36,8 +36,8 @@ public class JavaApplication1 {
         boolean validarMenu = true;
         while (validarMenu){
             System.out.println("Ingrese porfavor una opcion...");
-            System.out.println("1.- Hacer historia en Instagram");
-            System.out.println("2.- Hacer historia en Twitter");
+            System.out.println("1.- Crear historia en Instagram");
+            System.out.println("2.- Crear Noticia en Twitter");
             System.out.println("3.- Ver todas las historias de Instagram");
             System.out.println("4.- Ver todas las noticias de Twitter");
             System.out.println("5.- Salir");
@@ -62,6 +62,10 @@ public class JavaApplication1 {
             }else if (opcion.equals("5")) {
                 System.out.println("Muchas gracias por visitar la app, hasta luego!!!");
                 validarMenu = false;
+            }else{
+                System.out.println("-----------------------------------------");
+                System.out.println("Opcion no valida, intente denuevo...");
+                System.out.println("-----------------------------------------");
             }
             
         }
