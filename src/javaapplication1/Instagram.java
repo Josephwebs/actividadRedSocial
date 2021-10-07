@@ -54,7 +54,12 @@ public class Instagram extends RedSocial {
     @Override
     public void mostrar() {
         super.mostrar();
-        System.out.println(this.historia);//To change body of generated methods, choose Tools | Templates.
+        for (String string : this.historia) {
+            System.out.println("A continucion veras todas las noticias que has creado...");
+            System.out.println("---------------------------------");
+            System.out.println(string);
+        }
+        //To change body of generated methods, choose Tools | Templates.
     }
     
 }

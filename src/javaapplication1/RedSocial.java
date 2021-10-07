@@ -37,6 +37,7 @@ public class RedSocial {
         this.password = password;
     }
     public void mostrar() {
-        System.out.println(this.usuario);
+        System.out.println("-----------------------------");
+        System.out.println("Hola " + this.usuario+"!!!");
     }
 }

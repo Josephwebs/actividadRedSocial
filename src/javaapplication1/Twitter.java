@@ -15,9 +15,9 @@ import java.util.List;
 public class Twitter extends RedSocial {
     private int id;
     private List<String> noticia;
-    private Date fecha;  
+    private String fecha;  
 
-    public Twitter(int id, List<String> noticia, Date fecha, String usuario, String password) {
+    public Twitter(int id, List<String> noticia, String fecha, String usuario, String password) {
         super(usuario, password);
         this.id = id;
         this.noticia = noticia;
@@ -44,12 +44,24 @@ public class Twitter extends RedSocial {
         this.noticia = noticia;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    
+    @Override
+    public void mostrar() {
+        super.mostrar();
+        System.out.println("A continucion veras todas las noticias que has creado...");
+        for (String noticia : this.noticia) {
+            System.out.println("---------------------------------");
+            System.out.println(noticia);
+        }
+//To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -5,6 +5,8 @@
  */
 package javaapplication1;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,14 +22,23 @@ public class JavaApplication1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        List<String> historiasUser = new ArrayList();
-        System.out.println("Ingrese una historia...");
+        
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");        
         Scanner s = new Scanner(System.in);
+        System.out.println("Bienvenido!!");
+        List<String> historiasUser = new ArrayList();
+        List<String> noticiasUser = new ArrayList();
+        System.out.print("Ingrese una historia para Instagram : ");
         String historia = s.nextLine();
         historiasUser.add(historia);
-        Instagram usuario = new Instagram(1, historiasUser ,true , "jose", "123");
+        System.out.print("Ingrese una noticia para Twitter : "); 
+        String noticia = s.nextLine();
+        noticiasUser.add(noticia);
+        Instagram instagramUser = new Instagram(1, historiasUser ,true , "Victor", "123");
+        Twitter twitterUser = new Twitter(1, noticiasUser ,dtf.format(LocalDateTime.now()), "Juana", "123");
+        instagramUser.mostrar();
+        twitterUser.mostrar();
         
-        usuario.mostrar();
         
     }
     
