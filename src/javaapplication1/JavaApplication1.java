@@ -23,10 +23,11 @@ public class JavaApplication1 {
     public static void main(String[] args) {
         // TODO code application logic here
         // Los objetos de usuario estan seteados con un 
-        Instagram instagramUser = new Instagram("Victor", "123");
+        // Se setea el usuario de nombre ramiro y clave 123
+        Instagram instagramUser = new Instagram("Ramiro", "123");
         instagramUser.setId(1);
         instagramUser.setEstado(true);
-        Twitter twitterUser = new Twitter("Juana", "123");
+        Twitter twitterUser = new Twitter("Ramiro", "123");
         twitterUser.setId(1);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");       
         twitterUser.setFecha(dtf.format(LocalDateTime.now()));
