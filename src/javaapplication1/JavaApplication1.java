@@ -37,6 +37,7 @@ public class JavaApplication1 {
         List<String> noticiasUser = new ArrayList();
         boolean validarMenu = true;
         while (validarMenu){
+            System.out.println("-----------------------------------------");
             System.out.println("Ingrese porfavor una opcion...");
             System.out.println("1.- Crear historia en Instagram");
             System.out.println("2.- Crear Noticia en Twitter");
