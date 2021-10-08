@@ -53,8 +53,8 @@ public class Twitter extends RedSocial {
     
     @Override
     public void mostrar() {
-        System.out.println("A continucion veras todas las noticias que has creado...");
         super.mostrar();
+        System.out.println("A continucion veras todas las noticias que has creado...");
         for (String noticia : this.noticia) {
             System.out.println("------------------------------");
             System.out.println(noticia);
