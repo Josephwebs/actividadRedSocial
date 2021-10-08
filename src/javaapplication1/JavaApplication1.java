@@ -28,7 +28,8 @@ public class JavaApplication1 {
         instagramUser.setEstado(true);
         Twitter twitterUser = new Twitter("Juana", "123");
         twitterUser.setId(1);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");        
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");       
+        twitterUser.setFecha(dtf.format(LocalDateTime.now()));
         Scanner s = new Scanner(System.in);
         System.out.println("Bienvenido!!");
         List<String> historiasUser = new ArrayList();
@@ -41,31 +42,55 @@ public class JavaApplication1 {
             System.out.println("3.- Ver todas las historias de Instagram");
             System.out.println("4.- Ver todas las noticias de Twitter");
             System.out.println("5.- Salir");
+            System.out.print("------>");
             String opcion = s.nextLine();
-            if (opcion.equals("1")) {
-                System.out.print("Ingrese una historia para Instagram : ");
-                String historia = s.nextLine();
-                historiasUser.add(historia);        
-                instagramUser.setHistoria(historiasUser);
+            switch (opcion) {
+                case "1":
+                    System.out.print("Ingrese una historia para Instagram : ");
+                    String historia = s.nextLine();
+                    historiasUser.add(historia);
+                    instagramUser.setHistoria(historiasUser);
+                    System.out.println("-----------------------------");
+                    System.out.println("hisotoria ingresada con exito");
+                    System.out.println("-----------------------------");
+                    break;
+                case "2":
+                    System.out.print("Ingrese una noticia para Twitter : ");
+                    String noticia = s.nextLine();
+                    noticiasUser.add(noticia);
+                    twitterUser.setNoticia(noticiasUser);
+                    System.out.println("-------------------------");
+                    System.out.println("Noticia creada con exito");
+                    System.out.println("-------------------------");
+                    break;
+                case "3":
+                    if (historiasUser.isEmpty()){
+                    System.out.println("-----------------------------------------");
+                        System.out.println("Aun no as creado ninguna historia");
+                    System.out.println("-----------------------------------------");
+                    }else{
+                        instagramUser.mostrar();
 
-            }else if (opcion.equals("2")){
-                System.out.print("Ingrese una noticia para Twitter : "); 
-                String noticia = s.nextLine();
-                noticiasUser.add(noticia);
-                twitterUser.setNoticia(noticiasUser);
-                twitterUser.setFecha(dtf.format(LocalDateTime.now()));
-                
-            }else if  (opcion.equals("3")){
-                instagramUser.mostrar();
-            }else if (opcion.equals("4")){
-                twitterUser.mostrar();
-            }else if (opcion.equals("5")) {
-                System.out.println("Muchas gracias por visitar la app, hasta luego!!!");
-                validarMenu = false;
-            }else{
-                System.out.println("-----------------------------------------");
-                System.out.println("Opcion no valida, intente denuevo...");
-                System.out.println("-----------------------------------------");
+                    }
+                    break;
+                case "4":
+                    if (noticiasUser.isEmpty()){
+                    System.out.println("-----------------------------------------");
+                        System.out.println("Aun no as creado ninguna noticia");
+                    System.out.println("-----------------------------------------");
+                    }else{
+                        twitterUser.mostrar();
+                    }               
+                    break;
+                case "5":
+                    System.out.println("Muchas gracias por visitar la app, hasta luego!!!");
+                    validarMenu = false;
+                    break;
+                default:
+                    System.out.println("-----------------------------------------");
+                    System.out.println("Opcion no valida, intente denuevo...");
+                    System.out.println("-----------------------------------------");
+                    break;
             }
             
         }

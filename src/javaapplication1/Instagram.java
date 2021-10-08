@@ -54,9 +54,9 @@ public class Instagram extends RedSocial {
     @Override
     public void mostrar() {
         super.mostrar();
-        for (String string : this.historia) {
             System.out.println("A continucion veras todas las historias que has creado...");
-            System.out.println("--------------------------------------------------------");
+        for (String string : this.historia) {
+            System.out.println("------------------------------");
             System.out.println(string);
         }
         //To change body of generated methods, choose Tools | Templates.
